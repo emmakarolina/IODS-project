@@ -1,2 +1,9 @@
 
 ## Testi
+
+```{r}
+data(iris)
+
+plot(iris)
+```
+
