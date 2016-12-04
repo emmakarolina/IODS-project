@@ -1,9 +1,5 @@
 
 ## Testi
 
-```{r}
-data(iris)
-
-plot(iris)
-```
+This is for IODS project.
 
