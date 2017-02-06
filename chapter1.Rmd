@@ -19,7 +19,7 @@ MM <- as.data.frame(MM)
 # 3D plot
 library(plotly)
 
-plot_ly(data=MM, x = d$LD1, y = d$LD2, z = d$LD3, type= 'scatter3d', mode='markers')
+plot_ly(data=MM, x = MM$LD1, y = MM$LD2, z = MM$LD3, type= 'scatter3d', mode='markers')
 
 ```
 
