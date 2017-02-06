@@ -2,3 +2,24 @@
 # About the project
 
 *Write a short description about the course and add a link to your github repository here. This is an R markdown (.Rmd) file so you can use R markdown syntax. See the 'Useful links' page in the mooc area (chapter 1) for instructions.*
+
+```{r}
+library(MASS)
+boston_scaled <- read.table("http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/boston_scaled.txt", sep  =",", header = T)
+
+n <- nrow(boston_scaled)
+ind <- sample(n,  size = n * 0.8)
+train <- boston_scaled[ind,]
+test <- boston_scaled[-ind,]
+
+lda.fit = lda(crime ~ ., data=train)
+predictors <- dplyr::select(train, -crime)
+MM <- as.matrix(predictors) %*% lda.fit$scaling
+MM <- as.data.frame(MM)
+# 3D plot
+library(plotly)
+
+plot_ly(data=MM, x = d$LD1, y = d$LD2, z = d$LD3, type= 'scatter3d', mode='markers')
+
+```
+
